@@ -1,4 +1,4 @@
-import 'package:doctor_de_plantas/screens/image.dart';
+import 'package:doctor_de_plantas/screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Imagen(),
+      home: const Login(),
     );
   }
 }
