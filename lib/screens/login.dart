@@ -2,6 +2,7 @@ import 'dart:convert' as convert;
 
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:doctor_de_plantas/screens/imagen.dart';
+import 'package:doctor_de_plantas/screens/panel_inicio.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
@@ -193,8 +194,13 @@ class _Login extends State<Login> {
         if (response['success']) {
           print_message(response['message'], AnimatedSnackBarType.success);
           print(response['data']);
+          Navigator.pop(context);
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Imagen()));
+            context,
+            MaterialPageRoute(
+              builder: (context) => PanelInicio(),
+            ),
+          );
         } else {
           print_message(response['message'], AnimatedSnackBarType.info);
         }
