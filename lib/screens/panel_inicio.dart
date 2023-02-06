@@ -47,6 +47,8 @@ class _PanelInicio extends State<PanelInicio> {
       body: Column(
         children: <Widget>[
           CardSearch(),
+          ListCardType(),
+          //ListTypeOptions(),
         ],
       ),
     );
@@ -209,6 +211,53 @@ class CardSearch extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ListCardType extends StatelessWidget {
+  const ListCardType({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: Row(
+        children: [
+          CardSelect('Frutales', 'assets/frutas.png'),
+          CardSelect('Cultivo', 'assets/cultivos.png'),
+        ],
+      ),
+    );
+  }
+}
+
+class CardSelect extends StatelessWidget {
+  String title;
+  String imagen;
+  CardSelect(this.title, this.imagen);
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Image.asset(
+              this.imagen,
+              width: 120,
+            ),
+            Text(
+              this.title,
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 30,
+              ),
+            ),
+          ],
+        ),
+      ),
+      margin: EdgeInsets.all(10),
     );
   }
 }
